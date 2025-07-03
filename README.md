@@ -30,12 +30,17 @@
 ## 📁 Project Structure
 
 One-Stop-Guide/
-│
+<br>
 ├── indx.html # Main homepage
+<br>
 ├── ajmer.html, delhi.html # Static city pages
+<br>
 ├── city.php, sikar.php # Dynamic pages using PHP
+<br>
 ├── dbconnect.php # DB connection file
+<br>
 ├── CityGuideDb.sql # SQL file to create and populate DB
+<br>
 └── assets/ # (If present) For images, CSS, JS
 
 
