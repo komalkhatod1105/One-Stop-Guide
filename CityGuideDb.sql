@@ -69,8 +69,9 @@ INSERT INTO city_data (city_name, place_name, place_type, description) VALUES
 
 -- Laxmangarh
 INSERT INTO city_data (city_name, place_name, place_type, description) VALUES
-('Laxmangarh', 'Laxmangarh Fort', 'Place', 'Historical fort situated atop a hill.'),
-('Laxmangarh', 'CHC Laxmangarh', 'Hospital', 'Community Health Center serving the town.'),
-('Laxmangarh', 'Mody University', 'College', 'Premier women\s's university with a large campus.'),
-('Laxmangarh', 'Tagore Public School', 'School', 'English medium co-ed school.'),
-('Laxmangarh', 'The Brew Villa Café', 'Cafe', 'Trendy student-friendly café near university.');
+  ('Laxmangarh', 'Laxmangarh Fort',      'Place',    'Historical fort situated atop a hill.'),
+  ('Laxmangarh', 'CHC Laxmangarh',        'Hospital', 'Community Health Center serving the town.'),
+  ('Laxmangarh', 'Mody University',       'College',  'Premier women''s university with a large campus.'),
+  ('Laxmangarh', 'Tagore Public School',  'School',   'English medium co-ed school.'),
+  ('Laxmangarh', 'The Brew Villa Café',   'Cafe',     'Trendy student-friendly café near university.');
+
