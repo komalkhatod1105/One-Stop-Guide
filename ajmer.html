@@ -248,9 +248,11 @@
       <p>
         Explore the sacred city of Ajmer, renowned for the historic Ajmer Sharif Dargah, beautiful lakes, and vibrant culture. A melting pot of spirituality, history, and commerce, Ajmer offers something special for every traveler.
       </p>
-      <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
+      <form action="city.php">
+           <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
         Show More
       </button>
+      </form>
     </div>
   </section>
 
@@ -299,7 +301,7 @@
     const toggleBtn = document.getElementById('toggleMoreBtn');
     const moreInfo = document.getElementById('moreInfoSection');
     const img = document.getElementById('ajmerImg');
-
+    
     toggleBtn.addEventListener('click', () => {
       if (moreInfo.style.display === 'block') {
         moreInfo.style.display = 'none';
