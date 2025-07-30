@@ -26,7 +26,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: 10px;
+      border-radius: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     nav h2 {
       color: #ff4b2b;
@@ -34,7 +37,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap:40px;
     }
     nav ul li a {
       text-decoration: none;
@@ -44,12 +47,21 @@
     }
     header {
       text-align: center;
-      padding: 30px 0;
+      padding: 40px 0;
       animation: fadeInDown 1s ease;
+      justify-content: center;
+      align-items: center;
+      box-shadow:#952d0a;
+      
     }
     header h1 {
       font-size: 3rem;
       color: #ff4b2b;
+      display: flex;
+      position: sticky;
+      z-index: 100;
+      box-shadow: #333;
+
     }
 
     @keyframes fadeInDown {
