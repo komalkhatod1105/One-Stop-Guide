@@ -1,82 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kota - One Stop Guide</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap"
+    rel="stylesheet" />
   <style>
-    /* Same styling as Ajmer page */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f6f8fa;
-      color: #1f2937;
+      background: linear-gradient(to right, #fcb69f, #ffecd2);
+      color: #a71111;
+      font-size: 16px;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Header */
     header {
-      background: #232f3e;
-      padding: 1rem 3rem;
+      background: #FFDCDC;
+      padding: 1rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
+
     .header-container {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
+
     .logo {
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: 1.8rem;
-      color: #ff9900;
+      font-size: 1.6rem;
+      color: #ff4b2b;
       cursor: pointer;
-      letter-spacing: 2px;
-      user-select: none;
     }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.6rem;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
     nav ul {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       list-style: none;
     }
+
     nav ul li a {
-      color: #e1e1e1;
+      color: #CD5656;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.05rem;
       padding: 0.4rem 0.8rem;
       border-radius: 4px;
       transition: background 0.3s ease;
     }
+
     nav ul li a:hover,
     nav ul li a.active {
       background: #37475a;
       color: #ff9900;
     }
+
+    /* Hero Section */
     .hero {
       max-width: 1200px;
-      margin: 3rem auto 5rem;
+      margin: 3rem auto;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
     }
-    .hero-img {
+
+    .hero-img,
+    .hero-content {
       flex: 1 1 500px;
-      max-height: 400px;
-      overflow: hidden;
+      width: 100%;
     }
+
     .hero-img img {
       width: 100%;
       height: 100%;
@@ -84,149 +106,203 @@
       transition: transform 0.5s ease;
       cursor: pointer;
     }
+
     .hero-img img:hover {
       transform: scale(1.05);
     }
+
     .hero-content {
-      flex: 1 1 500px;
-      padding: 3rem 3rem 3rem 4rem;
+      padding: 2rem 3rem;
     }
+
     .hero-content h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #232f3e;
+      color: #ff4b2b;
     }
+
     .hero-content p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: #4b5563;
       margin-bottom: 2rem;
-      max-width: 550px;
       font-weight: 500;
     }
+
+    /* Button */
     .btn-primary {
       background: linear-gradient(90deg, #ff9900 0%, #ffb84d 100%);
       border: none;
       color: white;
-      padding: 1rem 2.8rem;
-      font-size: 1.1rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.05rem;
       border-radius: 30px;
       cursor: pointer;
       font-weight: 700;
-      box-shadow: 0 4px 12px rgba(255,153,0,0.4);
+      box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4);
       transition: all 0.3s ease;
-      user-select: none;
-      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
+
     .btn-primary:hover {
       background: linear-gradient(90deg, #cc7a00 0%, #ffa64d 100%);
-      box-shadow: 0 6px 15px rgba(204,122,0,0.6);
       transform: translateY(-2px);
     }
+
+    /* More Info Section */
     .more-info {
       max-width: 700px;
-      margin: 2rem auto 5rem;
+      margin: 2rem auto;
       background: white;
-      padding: 2rem 3rem;
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       font-size: 1.1rem;
       color: #374151;
       line-height: 1.7;
       display: none;
       animation: fadeIn 0.7s ease forwards;
     }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(15px);}
-      to {opacity: 1; transform: translateY(0);}
+
+    /* Gallery */
+    .photo-gallery div img:hover {
+      transform: scale(1.03);
     }
+
+    /* Footer */
     footer {
-      background: #232f3e;
-      color: #cbd5e1;
+      background: white;
+      color: #121314;
       padding: 3rem 1.5rem;
-      font-size: 0.9rem;
-      user-select: none;
+      font-size: 0.95rem;
     }
+
     .footer-container {
       max-width: 1200px;
       margin: auto;
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       gap: 3rem;
+      justify-content: space-between;
     }
+
     .footer-section {
       flex: 1 1 250px;
     }
+
     .footer-section h3 {
       font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #ff9900;
+      font-size: 1.2rem;
+      color: #08000e;
       margin-bottom: 1rem;
-      border-bottom: 3px solid #ff9900;
-      padding-bottom: 0.5rem;
     }
+
     .footer-links ul {
       list-style: none;
     }
-    .footer-links ul li {
-      margin-bottom: 0.8rem;
-    }
+
     .footer-links ul li a {
-      color: #cbd5e1;
+      color: #eb0c3c;
       text-decoration: none;
-      transition: color 0.3s ease;
-      font-weight: 500;
+      font-size: 0.95rem;
     }
+
     .footer-links ul li a:hover {
       color: #ff9900;
     }
-    .footer-contact p, .footer-contact a {
-      color: #cbd5e1;
-      margin-bottom: 0.7rem;
-      display: block;
-      font-weight: 500;
+
+    .footer-contact a {
+      color: #0a06f4;
       text-decoration: none;
+      font-size: 0.95rem;
     }
-    .footer-contact a:hover {
-      color: #ff9900;
-    }
+
     .footer-bottom {
       text-align: center;
       margin-top: 2rem;
-      color: #94a3b8;
       font-style: italic;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        margin: 2rem auto 4rem;
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
       }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive: Navbar and Layout */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
       .hero-content {
-        padding: 2rem 2rem 3rem 2rem;
+        padding: 1.5rem;
         text-align: center;
       }
-      nav ul {
-        gap: 1rem;
+
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
+
+      nav ul li a {
+        font-size: 1rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.05rem;
+      }
+
+      .footer-bottom {
+        font-size: 0.85rem;
       }
     }
   </style>
+
 </head>
+
 <body>
- <header>
+
+  <header>
     <div class="header-container">
       <div class="logo">One Stop Guide</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
       <nav>
-        <ul>
+        <ul id="navLinks">
           <li><a href="index.html">Home</a></li>
-      
           <li><a href="laxmangarh.html">Laxmangarh</a></li>
+          <li><a href="kota.html"class="active">Kota</a></li>
           <li><a href="delhi.html">Delhi</a></li>
-          <li><a href="fatehpur.html">Fatehpur</a></li>
-          <li><a href="sikar.html" class="active">Sikar</a></li>
+          <li><a href="sikar.html" >Sikar</a></li>
+           <li><a href="fatehpur.html" >Fatehpur</a></li>
           <li><a href="ratangarh.html">Ratangarh</a></li>
           <li><a href="kishangarh.html">Kishangarh</a></li>
           <li><a href="ajmer.html">Ajmer</a></li>
@@ -236,19 +312,21 @@
   </header>
 
   <section class="hero" aria-label="Kota overview and image">
-    <div class="hero-img" role="img" aria-label="Image of Kota city and Chambal river">
-      <img
-        src="https://i.ytimg.com/vi/9xIyFlQ2moA/hq720.jpg"
-        alt="Kota city aerial view"
-        id="kotaImg"
-        loading="lazy"
-      />
+    <div class="hero-img" role="img" aria-label="Image of Kota city">
+      <img src="https://pixelvoyages.com/wp-content/uploads/2015/12/singhania-haveli-fatehpur-shekhawati-rajasthan-11-1.jpg"
+        alt="Kota city skyline" id="KotaImg" loading="lazy" />
     </div>
     <div class="hero-content">
       <h1>Welcome to Kota</h1>
-      <p>
-        Kota is famous for its vibrant culture, historic palaces, and the scenic Chambal river. Known as the education hub of Rajasthan, Kota offers a blend of heritage and modernity.
-      </p>
+      <p>Kota is both an industrial and educational powerhouse, located on the Chambal River.
+
+<p>
+📌 Key Info:
+
+Known for engineering/medical coaching
+
+Hosts beautiful parks, palaces, and riverfronts</p>
+</p>
       <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
         Show More
       </button>
@@ -257,12 +335,49 @@
 
   <section class="more-info" id="moreInfoSection" aria-hidden="true">
     <p>
-      Kota boasts attractions like the Kota Barrage, Jag Mandir Palace, and numerous temples. The city also hosts many coaching institutes attracting students nationwide. The nearby Chambal Wildlife Sanctuary is a must-visit for nature lovers.
-    </p>
-    <p>
-      The city’s unique blend of industrial growth and cultural heritage makes it an exciting place to explore for tourists and students alike.
+
+      🌟 Top Places to Visit:
+      <br>
+    <ul>
+  
+<li>   7 Wonders Park – Replicas of world wonders
+</li>
+
+<li>Chambal Riverfront – Clean, scenic walkways
+</li>
+
+<li>
+Garadia Mahadev – Iconic viewpoint over Chambal gorge</li>
+
+<li>Kishore Sagar & Jagmandir Palace
+</li>
+<li>Kota Barrage</li>
+
+<li>Government Museum & Brij Vilas Palace</li>
+    </ul>
     </p>
   </section>
+
+
+<section class="photo-gallery" aria-label="Photo Gallery of Kota"
+  style="max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem;">
+  <h2 style="font-family: 'Poppins', sans-serif; font-size: 2rem; margin-bottom: 1.5rem; color: #232f3e; text-align: center;">
+    Gallery – Kota</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+    <img src="https://www.theindia.co.in/blog/wp-content/uploads/2024/01/Chambal-River-Front.jpg"
+      alt="Chambal Riverfront Kota" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" loading="lazy" />
+    <img src="https://www.japjitravel.com/jap/media/gallery/Seven-Wonders-Park-Kota.jpg"
+      alt="Seven Wonders Park Kota" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" loading="lazy" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpESbchDsnk3e_QCC8MIzpwQS01xmduBmWbw&s"
+      alt="Garadia Mahadev Temple" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" loading="lazy" />
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/3b/02/c8/jagmandir-palace.jpg?w=1200&h=-1&s=1"
+      alt="Jagmandir Palace" style="width: 100%; height: 220px; object-fit: cover; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" loading="lazy" />
+  </div>
+</section>
+
+
+
+
 
   <footer>
     <div class="footer-container">
@@ -273,9 +388,9 @@
           <li><a href="sikar.html">Sikar</a></li>
           <li><a href="kishangarh.html">Kishangarh</a></li>
           <li><a href="laxmangarh.html">Laxmangarh</a></li>
-          <li><a href="kota.html" aria-current="page">Kota</a></li>
+          <li><a href="kota.html">Kota</a></li>
+          <li><a href="fatehpur.html" aria-current="page">Fatehpur</a></li>
           <li><a href="delhi.html">Delhi</a></li>
-          <li><a href="fatehpur.html">Fatehpur</a></li>
           <li><a href="ratangarh.html">Ratangarh</a></li>
         </ul>
       </div>
@@ -285,8 +400,8 @@
         <p>Phone: <a href="tel:+919876543210">+91-9876543210</a></p>
         <p>
           Follow us on:
-          <a href="#" aria-label="Facebook">Facebook</a> 
-          <a href="#" aria-label="Twitter">Twitter</a> 
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
           <a href="#" aria-label="Instagram">Instagram</a>
         </p>
       </div>
@@ -297,9 +412,11 @@
   </footer>
 
   <script>
+
+
     const toggleBtn = document.getElementById('toggleMoreBtn');
     const moreInfo = document.getElementById('moreInfoSection');
-    const img = document.getElementById('kotaImg');
+    const img = document.getElementById('fatehpurImg');
 
     toggleBtn.addEventListener('click', () => {
       if (moreInfo.style.display === 'block') {
@@ -324,7 +441,22 @@
         img.style.cursor = 'zoom-out';
       }
     });
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Auto-close menu when a link is clicked (on mobile)
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+
   </script>
 
 </body>
+
 </html>
