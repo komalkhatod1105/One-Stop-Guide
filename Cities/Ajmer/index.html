@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajmer - One Stop Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+    <div class="header-container">
+      <div class="logo">One Stop Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+      
+          <li><a href="laxmangarh.html">Laxmangarh</a></li>
+          <li><a href="kota.html">Kota</a></li>
+          <li><a href="delhi.html">Delhi</a></li>
+          <li><a href="fatehpur.html">Fatehpur</a></li>
+          <li><a href="sikar.html" class="active">Sikar</a></li>
+          <li><a href="ratangarh.html">Ratangarh</a></li>
+          <li><a href="kishangarh.html">Kishangarh</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="hero" aria-label="Ajmer overview and image">
+    <div class="hero-img" role="img" aria-label="Image of Ajmer city with Dargah Sharif">
+      <img
+        src="https://images.herzindagi.info/image/2018/Dec/visit-ajmer-this-weekend.jpg"
+        alt="Ajmer Dargah Sharif"
+        id="ajmerImg"
+        loading="lazy"
+      />
+    </div>
+    <div class="hero-content">
+      <h1>Welcome to Ajmer</h1>
+      <p>
+        Explore the sacred city of Ajmer, renowned for the historic Ajmer Sharif Dargah, beautiful lakes, and vibrant culture. A melting pot of spirituality, history, and commerce, Ajmer offers something special for every traveler.
+      </p>
+      <form action="city.php">
+           <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
+        Show More
+      </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="more-info" id="moreInfoSection" aria-hidden="true">
+    <p>
+      Ajmer is one of the oldest cities of Rajasthan, famous for the shrine of Sufi saint Khwaja Moinuddin Chishti. The city has many attractions like Anasagar Lake, Adhai-din-ka-Jhonpra mosque, and the annual Urs festival that attracts devotees from across the world.
+    </p>
+    <p>
+      Ajmer also serves as a gateway to Pushkar, known for its sacred lake and Brahma temple. The city blends the historical with the modern, making it a vibrant place to visit and explore.
+    </p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section footer-links" aria-label="Explore cities links">
+        <h3>Explore Cities</h3>
+        <ul>
+          <li><a href="ajmer.html" aria-current="page">Ajmer</a></li>
+          <li><a href="sikar.html">Sikar</a></li>
+          <li><a href="kishangarh.html">Kishangarh</a></li>
+          <li><a href="laxmangarh.html">Laxmangarh</a></li>
+          <li><a href="kota.html">Kota</a></li>
+          <li><a href="delhi.html">Delhi</a></li>
+          <li><a href="fatehpur.html">Fatehpur</a></li>
+          <li><a href="ratangarh.html">Ratangarh</a></li>
+        </ul>
+      </div>
+      <div class="footer-section footer-contact" aria-label="Contact information">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:support@onestopguide.com">support@onestopguide.com</a></p>
+        <p>Phone: <a href="tel:+919876543210">+91-9876543210</a></p>
+        <p>
+          Follow us on:
+          <a href="#" aria-label="Facebook">Facebook</a> 
+          <a href="#" aria-label="Twitter">Twitter</a> 
+          <a href="#" aria-label="Instagram">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 One Stop Guide | Created by Komal & Khushi
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+
+</body>
+</html>
