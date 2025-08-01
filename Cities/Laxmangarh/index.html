@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laxmangarh - One Stop Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+   <header>
+    <div class="header-container">
+      <div class="logo">One Stop Guide</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kota.html">Kota</a></li>
+          <li><a href="delhi.html">Delhi</a></li>
+          <li><a href="fatehpur.html">Fatehpur</a></li>
+          <li><a href="sikar.html" class="active">Sikar</a></li>
+          <li><a href="ratangarh.html">Ratangarh</a></li>
+          <li><a href="kishangarh.html">Kishangarh</a></li>
+          <li><a href="ajmer.html">Ajmer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Laxmangarh overview and image">
+    <div class="hero-img" role="img" aria-label="Image of Laxmangarh city and fort">
+      <img
+        src="https://st2.indiarailinfo.com/kjfdsuiemjvcya0/0/9/8/3/673983/0/3.jpg"
+        alt="Laxmangarh Fort view"
+        id="laxmangarhImg"
+        loading="lazy"
+      />
+    </div>
+    <div class="hero-content">
+      <h1>Welcome to Laxmangarh</h1>
+      <p>
+        Laxmangarh is known for its beautiful fort, vibrant markets, and rich history. This charming town offers a peaceful atmosphere and a glimpse into Rajasthan’s traditional lifestyle.
+      </p>
+      <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
+        Show More
+      </button>
+    </div>
+  </section>
+
+  <section class="more-info" id="moreInfoSection" aria-hidden="true">
+    <p>
+      The Laxmangarh Fort, built in the 18th century, stands tall as a symbol of the region's heritage. The town also features bustling bazaars where you can find local handicrafts and traditional Rajasthani cuisine.
+    </p>
+    <p>
+      Laxmangarh's peaceful surroundings and cultural richness make it a great place for visitors looking to experience authentic Rajasthan away from the usual tourist spots.
+    </p>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section footer-links" aria-label="Explore cities links">
+        <h3>Explore Cities</h3>
+        <ul>
+          <li><a href="ajmer.html">Ajmer</a></li>
+          <li><a href="sikar.html">Sikar</a></li>
+          <li><a href="kishangarh.html">Kishangarh</a></li>
+          <li><a href="laxmangarh.html" aria-current="page">Laxmangarh</a></li>
+          <li><a href="kota.html">Kota</a></li>
+          <li><a href="delhi.html">Delhi</a></li>
+          <li><a href="fatehpur.html">Fatehpur</a></li>
+          <li><a href="ratangarh.html">Ratangarh</a></li>
+        </ul>
+      </div>
+      <div class="footer-section footer-contact" aria-label="Contact information">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:support@onestopguide.com">support@onestopguide.com</a></p>
+        <p>Phone: <a href="tel:+919876543210">+91-9876543210</a></p>
+        <p>
+          Follow us on:
+          <a href="#" aria-label="Facebook">Facebook</a> 
+          <a href="#" aria-label="Twitter">Twitter</a> 
+          <a href="#" aria-label="Instagram">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 One Stop Guide | Created by Komal & Khushi
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+
+</body>
+</html>
