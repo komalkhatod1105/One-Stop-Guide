@@ -310,9 +310,11 @@ footer {
        Nestled in the heart of Rajasthan, Ajmer is a city steeped in spiritual heritage and glorious Mughal-Rajput history. 
       From the serene Ana Sagar Lake to the legendary Dargah Sharif and the scenic Aravalli hills, explore Ajmer's rich tapestry of culture, architecture, and cuisine.
       </p>
-      <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
+      <form action="city.php">
+           <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
         Show More
       </button>
+      </form>
     </div>
   </section>
 
@@ -376,7 +378,7 @@ footer {
     const toggleBtn = document.getElementById('toggleMoreBtn');
     const moreInfo = document.getElementById('moreInfoSection');
     const img = document.getElementById('ajmerImg');
-
+    
     toggleBtn.addEventListener('click', () => {
       if (moreInfo.style.display === 'block') {
         moreInfo.style.display = 'none';

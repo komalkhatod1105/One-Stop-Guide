@@ -1,0 +1,272 @@
+
+This PR introduces a complete authentication system with both login and registration functionality. The implementation includes:
+
+- Clean, responsive UI for both login and registration forms
+- Form validation and secure password handling
+- Simulated authentication flow with dashboard redirection
+- Password visibility toggle functionality
+- Tab-based navigation between login and registration
+- Dashboard mockup with user information sections
+
+## Files Changed/Added
+1. `auth-system.html` - The main authentication system implementation
+
+## Screenshots
+![Login Screen](https://placehold.co/600x400?text=Login+Screen+with+Email+Password+Fields)
+![Register Screen](https://placehold.co/600x400?text=Register+Form+with+Validation)
+![Dashboard](https://placehold.co/600x400?text=User+Dashboard+After+Login)
+
+## Testing Instructions
+1. Open `auth-system.html` in browser
+2. Test the login flow with:
+   - Valid credentials (any will work, it's simulated)
+   - Invalid credentials (should show error)
+3. Test registration flow:
+   - Fill out form with valid details
+   - Try mismatched passwords to see validation
+   - Submit to see success flow
+4. Test the logout functionality from dashboard
+
+## Technical Details
+- Uses Tailwind CSS for styling
+- Pure JavaScript implementation (no external dependencies)
+- Responsive design that works on mobile and desktop
+- Secure password handling simulation (client-side only in this demo)
+
+## Notes
+- This is a frontend-only implementation. In a production environment, you would need to:
+  - Connect to a backend authentication service
+  - Implement proper password hashing
+  - Add CSRF protection
+  - Set up proper session management
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .auth-container {
+            height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .input-field:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+        
+        .toggle-btn {
+            position: absolute;
+            right: 0;
+            transform: translateY(-50%);
+            color: #6b7280;
+        }
+        
+        .logo {
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 1rem;
+            background-color: #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .form-switch {
+            transition: all 0.3s ease;
+        }
+        
+        .form-switch.active {
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .form-switch:not(.active) {
+            transform: translateX(100px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="auth-container flex items-center justify-center">
+    <div class="relative w-full max-w-md px-4">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- Logo and Header -->
+            <div class="p-6 text-center">
+                <div class="logo mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-1">Welcome Back</h1>
+                <p class="text-gray-600">Sign in to access your account</p>
+            </div>
+            
+            <!-- Tab Navigation -->
+            <div class="flex border-b border-gray-200">
+                <button id="login-tab" class="flex-1 py-3 text-sm font-medium text-center text-blue-600 border-b-2 border-blue-600">Sign In</button>
+                <button id="register-tab" class="flex-1 py-3 text-sm font-medium text-center text-gray-500 hover:text-blue-600">Create Account</button>
+            </div>
+            
+            <!-- Forms Container -->
+            <div class="relative p-6 overflow-hidden">
+                <!-- Login Form -->
+                <form id="login-form" class="form-switch active">
+                    <div class="mb-4">
+                        <label for="login-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <div class="relative">
+                            <input type="email" id="login-email" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="login-password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="login-password" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition" placeholder="••••••••" required>
+                            <button type="button" class="toggle-btn top-1/2 px-3 py-1 text-xs text-gray-500" onclick="togglePassword('login-password', this)">Show</button>
+                        </div>
+                        <div class="flex justify-end mt-1">
+                            <a href="#" class="text-xs text-blue-600 hover:underline">Forgot password?</a>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary w-full py-2 px-4 text-white font-medium rounded-lg focus:outline-none">
+                        Sign In
+                    </button>
+                    
+                    <div class="flex items-center justify-center mt-4">
+                        <span class="text-sm text-gray-600">Don't have an account?</span>
+                        <button type="button" onclick="switchToRegister()" class="ml-1 text-sm text-blue-600 font-medium hover:underline focus:outline-none">Sign up</button>
+                    </div>
+                </form>
+                
+                <!-- Register Form -->
+                <form id="register-form" class="form-switch absolute top-0 left-0 right-0 p-6">
+                    <div class="mb-4">
+                        <label for="register-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <div class="relative">
+                            <input type="text" id="register-name" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="register-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <div class="relative">
+                            <input type="email" id="register-email" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="register-password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="register-password" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition" placeholder="••••••••" required>
+                            <button type="button" class="toggle-btn top-1/2 px-3 py-1 text-xs text-gray-500" onclick="togglePassword('register-password', this)">Show</button>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-1">
+                            <p>• Minimum 8 characters</p>
+                            <p>• At least one uppercase letter</p>
+                            <p>• At least one number</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="register-confirm-password" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <div class="relative">
+                            <input type="password" id="register-confirm-password" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition" placeholder="••••••••" required>
+                            <button type="button" class="toggle-btn top-1/2 px-3 py-1 text-xs text-gray-500" onclick="togglePassword('register-confirm-password', this)">Show</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4 flex items-start">
+                        <input type="checkbox" id="terms" class="mt-1 mr-2" required>
+                        <label for="terms" class="text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary w-full py-2 px-4 text-white font-medium rounded-lg focus:outline-none">
+                        Create Account
+                    </button>
+                    
+                    <div class="flex items-center justify-center mt-4">
+                        <span class="text-sm text-gray-600">Already have an account?</span>
+                        <button type="button" onclick="switchToLogin()" class="ml-1 text-sm text-blue-600 font-medium hover:underline focus:outline-none">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Dashboard (Hidden by default) -->
+    <div id="dashboard" class="hidden fixed inset-0 bg-gray-50 p-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Welcome to Your Dashboard</h1>
+                    <button onclick="logout()" class="text-sm text-red-600 hover:underline">Logout</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="font-medium text-blue-800 mb-2">Profile Completion</h3>
+                        <div class="w-full bg-blue-200 rounded-full h-2 mb-2">
+                            <div class="bg-blue-600 h-2 rounded-full" style="width: 65%"></div>
+                        </div>
+                        <p class="text-sm text-blue-700">65% completed</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="font-medium text-green-800 mb-2">Recent Activity</h3>
+                        <p class="text-sm text-green-700">Last login: Just now</p>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h3 class="font-medium text-purple-800 mb-2">Notifications</h3>
+                        <p class="text-sm text-purple-700">No new notifications</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Quick Actions</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <button class="p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                            <div class="text-blue-600 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </div>
+                            <p class="text-sm font-medium text-gray-700">Create New</p>
+                        </button>
+                        <button class="p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                            <div class="text-green-600 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                            </div>
+                            <p class="text-sm font-medium text-gray-700">Transactions</p>
+                        </button>
+                        <button class="p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition">
+                            <div class="text-purple-600 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke
