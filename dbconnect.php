@@ -1,14 +1,15 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "230184"; // Default XAMPP password is blank
-$database = "CityGuideDB";
+$servername = "localhost";
+$username = "root";  // default XAMPP username
+$password = "123456";      // default is empty
+$dbname = "CityGuideDB"; // your database name
 
-// Establish connection
-$conn = mysqli_connect($host, $user, $password, $database);
+// Create connection
+$conn = new mysqli('localhost', 'cityguide_user', '123456', 'CityGuideDB',3307);
+
+
 // Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-
 ?>
