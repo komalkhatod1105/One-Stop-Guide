@@ -54,7 +54,7 @@ One-Stop-Guide/
    - Create a DB named `CityGuide`
    - Import `CityGuideDb.sql`
 4.  Open the browser and visit:
-5.  Click on any city card or page. Pages like `sikar.php` fetch data from DB.
+5.  Click on any city card or page. Pages like `sikar.html` fetch data from DB.
 
 ---
 
