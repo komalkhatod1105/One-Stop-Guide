@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review</title>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #0a0c37, #2e236c);
+      color: #333;
+      padding: 20px;
+    }
+     nav {
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(13, 235, 87, 0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+    }
+    nav h2 {
+      color: #0c0d35;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #e37907d2;
+      font-weight: 600;
+    }
+    .main-header {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    
+    .main-header h1 {
+      color: #e67e22; /* Orange color */
+      font-size: 2.5rem;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      position: relative;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    
+    .main-header h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 3px;
+      background: #e67e22;
+      border-radius: 3px;
+    }
+
+
+header {
+  background: var(--primary-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand h2 {
+  color: var(--accent);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  background: var(--accent);
+  color: var(--primary-bg);
+}
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+/* Dropdown Menu */
+.dropdown {
+      position: relative;
+    }
+    
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 100;
+      padding: 10px 0;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .dropdown-menu li {
+      padding: 8px 15px;
+    }
+    
+    .dropdown-menu a {
+      color: #333;
+      display: block;
+      transition: all 0.2s;
+    }
+    
+    .dropdown-menu a:hover {
+      background: #f5f5f5;
+      padding-left: 20px;
+    }
+    footer {
+      margin-top: 60px;
+      background-color: #dcd8d8;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 2s ease;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .footer-section h3 {
+      color: #2e125a;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    .footer-section ul li a:hover {
+      color: #07070f;
+    }
+
+    .made-by {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .komal-name {
+      background: linear-gradient(to right, #342856, #110d50);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      font-size: 1.1rem;
+      animation: colorPulse 2s infinite;
+    }
+    .footer-bottom-links {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .footer-bottom-links a {
+      color: #090518;
+      margin: 0 10px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .footer-bottom-links a:hover {
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+
+    @keyframes colorPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes floatIcon {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-3px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+     <header>
+  <nav class="main-nav">
+    <div class="nav-brand">
+      <h2>One Stop Guide</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="dropdown">
+       <!-- Cities Button -->
+<li class="dropdown">
+  <button class="dropbtn" onclick="toggleDropdown()">Cities ▾</button>
+  <div id="citiesDropdown" class="dropdown-content">
+    <a href="ajmer.html">Ajmer</a>
+    <a href="sikar.html">Sikar</a>
+    <a href="kishangarh.html">Kishangarh</a>
+    <a href="laxmangarh.html">Laxmangarh</a>
+    <a href="kota.html">Kota</a>
+    <a href="delhi.html">Delhi</a>
+    <a href="fatehpur.html">Fatehpur</a>
+    <a href="ratangarh.html">Ratangarh</a>
+    <a href="burdwan.html">Burdwan</a>
+    <a href="kolkata.html">Kolkata</a>
+    <a href="aligarh.html">Aligarh</a>
+    <a href="pune.html">Pune</a>
+    <a href="jaipur.html">Jaipur</a>
+  </div>
+</li>
+
+<style>
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+</style>
+
+<script>
+function toggleDropdown() {
+  document.getElementById("citiesDropdown").classList.toggle("show");
+}
+
+// Close dropdown if clicked outside
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    document.querySelectorAll(".dropdown-content").forEach(dd => dd.classList.remove('show'));
+  }
+}
+</script>
+
+      </li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+    
+
+ <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Get to Know Us</h3>
+        <ul>
+          <li><a href="#">About One Stop Guide</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Help Center</a></li>
+<li><a href="#">City Submission Form</a></li>
+<li><a href="#">Press & Media</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Blog</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-section">
+  <h3>Explore Cities</h3>
+  <ul>
+    <li><a href="ajmer.html" target="_blank">Ajmer</a></li>
+    <li><a href="sikar.html" target="_blank">Sikar</a></li>
+    <li><a href="kishangarh.html" target="_blank">Kishangarh</a></li>
+    <li><a href="laxmangarh.html" target="_blank">Laxmangarh</a></li>
+    <li><a href="kota.html" target="_blank">Kota</a></li>
+    <li><a href="delhi.html" target="_blank">Delhi</a></li>
+    <li><a href="fatehpur.html" target="_blank">Fatehpur</a></li>
+    <li><a href="jaipur.html" target="_blank">Jaipur</a></li>
+    <li><a href="pune.html" target="_blank">Pune</a></li>
+    <li><a href="aligarh.html">Aligarh</a></li>
+    <li><a href="burdman.html">Burdman</a></li>
+     <li><a href="kolkata.html" >Kolkata</a></li>
+  </ul>
+</div>
+
+
+      <div class="footer-section">
+        <h3>Connect with Us</h3>
+        <ul>
+          <li><a href="mailto:komalkhatod1234@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+          <li><a href="https://www.linkedin.com/in/komal-khatod-9b419a265" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/komalkhatod1105" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="tel:+918824778262"><i class="fas fa-phone"></i> Call Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <p class="made-by">
+      Made by <span class="komal-name">Komal Khatod & Khushi Poonia</span> | © 2025 One Stop Guide
+    </p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Back to Top ↑</a>
+    </div>
+  </footer>
+  </body>
+</html>
