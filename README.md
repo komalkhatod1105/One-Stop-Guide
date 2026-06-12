@@ -6,27 +6,27 @@
 
 ## 🚀 Features
 
-- 🏙️ Explore various Indian cities like Ajmer, Delhi, Sikar, and more
-- 📍 “Explore” button redirects to the city on Google Maps
-- 🧠 City info dynamically loaded using PHP and MySQL
-- 💡 User-friendly and mobile responsive design
-- 🧾 Database file (`CityGuideDb.sql`) included for easy setup
+-   🏙️ Explore various Indian cities like Ajmer, Delhi, Sikar, and more
+-   📍 “Explore” button redirects to the city on Google Maps
+-   🧠 City info dynamically loaded using PHP and MySQL
+-   💡 User-friendly and mobile responsive design
+-   🧾 Database file (`CityGuideDb.sql`) included for easy setup
 
 ---
 
 ## 🧑‍💻 Technologies Used
 
 ### Frontend:
-- HTML5
-- CSS3
-- JavaScript
+-   HTML5
+-   CSS3
+-   JavaScript
 
 ### Backend:
-- PHP
+-   PHP
 
 ### Database:
-- MySQL
-  
+-   MySQL
+  
 ## 📁 Project Structure
 
 One-Stop-Guide/
@@ -43,36 +43,41 @@ One-Stop-Guide/
 <br>
 └── assets/ # (If present) For images, CSS, JS
 
-
 ---
 
 ## ⚙️ How to Run Locally (XAMPP/WAMP)
 
-1. Clone or download this repo and move the folder into `htdocs` (for XAMPP).
-2. Start **Apache** and **MySQL** from XAMPP Control Panel.
-3. Import the database:
-   - Go to `phpMyAdmin`
-   - Create a DB named `CityGuide`
-   - Import `CityGuideDb.sql`
-4. Open the browser and visit:
-5.  Click on any city card or page. Pages like `sikar.php` fetch data from DB.
+1.  Clone or download this repo and move the folder into `htdocs` (for XAMPP).
+2.  Start **Apache** and **MySQL** from XAMPP Control Panel.
+3.  Import the database:
+   - Go to `phpMyAdmin`
+   - Create a DB named `CityGuide`
+   - Import `CityGuideDb.sql`
+4.  Open the browser and visit:
+5.  Click on any city card or page. Pages like `sikar.php` fetch data from DB.
 
 ---
 
 ## 💡 Future Scope
 
-- Add login/register functionality
-- User feedback or review system
-- Admin panel to update city content
-- API integration (weather, transport, tourism)
+-   Add login/register functionality
+-   User feedback or review system
+-   Admin panel to update city content
+-   API integration (weather, transport, tourism)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙋‍♀️ Developed By
 
-**Komal Khatod**  
-B.Tech CSE (3rd Year), Mody University of Science and Technology  
-📧 Email: [komalkhatod1234@gmail.com]  
+**Komal Khatod**  
+B.Tech CSE (3rd Year), Mody University of Science and Technology  
+📧 Email: [komalkhatod1234@gmail.com]  
 🔗 GitHub: [komalkhatod1105](https://github.com/komalkhatod1105)
 
 

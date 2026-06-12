@@ -7,213 +7,272 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet" />
   <style>
     /* (Same styling as Kishangarh page) */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f6f8fa;
-      color: #1f2937;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    header {
-      background: #232f3e;
-      padding: 1rem 3rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #ff9900;
-      cursor: pointer;
-      letter-spacing: 2px;
-      user-select: none;
-    }
-    nav ul {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    nav ul li a {
-      color: #e1e1e1;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      background: #37475a;
-      color: #ff9900;
-    }
-    .hero {
-      max-width: 1200px;
-      margin: 3rem auto 5rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-      overflow: hidden;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .hero-img {
-      flex: 1 1 500px;
-      max-height: 400px;
-      overflow: hidden;
-    }
-    .hero-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      cursor: pointer;
-    }
-    .hero-img img:hover {
-      transform: scale(1.05);
-    }
-    .hero-content {
-      flex: 1 1 500px;
-      padding: 3rem 3rem 3rem 4rem;
-    }
-    .hero-content h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #232f3e;
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      color: #4b5563;
-      margin-bottom: 2rem;
-      max-width: 550px;
-      font-weight: 500;
-    }
-    .btn-primary {
-      background: linear-gradient(90deg, #ff9900 0%, #ffb84d 100%);
-      border: none;
-      color: white;
-      padding: 1rem 2.8rem;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 4px 12px rgba(255,153,0,0.4);
-      transition: all 0.3s ease;
-      user-select: none;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(90deg, #cc7a00 0%, #ffa64d 100%);
-      box-shadow: 0 6px 15px rgba(204,122,0,0.6);
-      transform: translateY(-2px);
-    }
-    .more-info {
-      max-width: 700px;
-      margin: 2rem auto 5rem;
-      background: white;
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      font-size: 1.1rem;
-      color: #374151;
-      line-height: 1.7;
-      display: none;
-      animation: fadeIn 0.7s ease forwards;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(15px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    footer {
-      background: #232f3e;
-      color: #cbd5e1;
-      padding: 3rem 1.5rem;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 3rem;
-    }
-    .footer-section {
-      flex: 1 1 250px;
-    }
-    .footer-section h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #ff9900;
-      margin-bottom: 1rem;
-      border-bottom: 3px solid #ff9900;
-      padding-bottom: 0.5rem;
-    }
-    .footer-links ul {
-      list-style: none;
-    }
-    .footer-links ul li {
-      margin-bottom: 0.8rem;
-    }
-    .footer-links ul li a {
-      color: #cbd5e1;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-    .footer-links ul li a:hover {
-      color: #ff9900;
-    }
-    .footer-contact p, .footer-contact a {
-      color: #cbd5e1;
-      margin-bottom: 0.7rem;
-      display: block;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .footer-contact a:hover {
-      color: #ff9900;
-    }
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      color: #94a3b8;
-      font-style: italic;
-      font-size: 0.85rem;
-    }
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        margin: 2rem auto 4rem;
-      }
-      .hero-content {
-        padding: 2rem 2rem 3rem 2rem;
-        text-align: center;
-      }
-      nav ul {
-        gap: 1rem;
-      }
-    }
-  </style>
+    /* Ajmer Color Palette */
+:root {
+  --primary-bg: #161d27;
+  --secondary-bg: #232b39;
+  --accent: #b8af78;
+  --accent-light: #b8af78;
+  --text-main: #f3f6fa;
+  --text-secondary: #b7bcca;
+  --muted: #353c4a;
+  --card-bg: #232b39;
+  --border: #232f42;
+  --gallery-hover: #b6ae56;
+  --error: #ff3e5e;
+}
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto','Poppins',sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+header {
+  background: var(--secondary-bg);
+  box-shadow: 0 1.5px 10px rgba(30,40,50,0.19);
+  padding: 0.55rem 0;      /* LESS THICK NAVBAR */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-container {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.2rem;
+}
+.logo {
+  font-family: 'Poppins',sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.18em 0.5em;
+  background: transparent;
+  border-radius: 6px;
+  transition: background 0.14s, color 0.16s;
+  cursor: pointer;
+}
+.logo:hover {
+  color: var(--accent-light);
+  background: var(--muted);
+}
+nav ul {
+  display: flex;
+  gap: 1.1rem;          /* compact spacing */
+  list-style: none;
+}
+nav ul li a {
+  color: var(--text-main);
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.35rem 0.90rem;
+  border-radius: 7px;
+  letter-spacing: 0.5px;
+  transition: background 0.16s, color 0.18s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--accent);
+  color: var(--primary-bg);
+}
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background: var(--card-bg);
+  border-radius: 18px;
+  max-width: 1200px;
+  margin: 2.3rem auto 3rem;
+  box-shadow: 0 14px 44px rgba(25,35,60,0.25);
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+}
+.hero-img {
+  flex: 1 1 400px;
+  min-width: 320px;
+  max-height: 420px;
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(120deg, #22334d 35%, #294935 100%);
+}
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.09) contrast(1.08) brightness(0.95);
+  transition: filter 0.36s, transform 0.18s;
+  cursor: pointer;
+}
+.hero-img img:hover {
+  filter: none;
+  transform: scale(1.035);
+}
+.hero-content {
+  flex: 2 1 540px;
+  padding: 2.7rem 2.5rem 2.8rem 2.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(19,30,41, 0.85) 65%, #232b39 100%);
+}
+.hero-content h1 {
+  font-family: 'Poppins',sans-serif;
+  font-size: 2.6rem;
+  color: var(--accent);
+  margin-bottom: 1.05rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.hero-content p {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 1.7rem;
+  max-width: 580px;
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--primary-bg);
+  padding: 0.75rem 2.1rem;
+  font-size: 1.07rem;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 15px rgba(54, 226, 167, 0.09);
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.16s, box-shadow 0.18s;
+  margin-top: 0.5rem;
+}
+.btn-primary:hover {
+  background: var(--accent-light);
+  color: var(--primary-bg);
+  box-shadow: 0 7px 18px var(--gallery-hover);
+}
+
+.more-info {
+  max-width: 780px;
+  margin: 2rem auto 4rem;
+  background: var(--card-bg);
+  padding: 2.1rem 2.8rem;
+  border-radius: 13px;
+  box-shadow: 0 7px 30px #11182566;
+  font-size: 1.10rem;
+  color: var(--text-secondary);
+  border-left: 6.5px solid var(--accent);
+  animation: fadeIn 0.8s ease both;
+  display: none;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(18px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+.ajmer-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.18rem;
+  max-width: 1000px;
+  margin: 2rem auto 2.7rem;
+  justify-content: center;
+}
+.ajmer-gallery img {
+  width: 222px;
+  height: 146px;
+  object-fit: cover;
+  border-radius: 9px;
+  border: 2.5px solid var(--muted);
+  background: var(--secondary-bg);
+  box-shadow: 0 3px 13px rgba(50,210,170,0.09);
+  margin-bottom: 0.25rem;
+  filter: grayscale(0.18) brightness(0.93);
+  transition: transform 0.2s, box-shadow 0.15s, border 0.13s, filter 0.13s;
+}
+.ajmer-gallery img:hover {
+  transform: scale(1.05) rotate(-2deg);
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px var(--gallery-hover);
+  filter: none;
+}
+
+footer {
+  background: var(--secondary-bg);
+  color: var(--text-main);
+  padding: 2.2rem 1.2rem;
+}
+.footer-container {
+  max-width: 1170px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.footer-section {
+  flex: 1 1 180px;
+}
+.footer-section h3 {
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  border-bottom: 2.5px solid var(--accent);
+  padding-bottom: 0.3rem;
+}
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 0.6rem; }
+.footer-links ul li a {
+  color: #c9a8c3;
+  text-decoration: none;
+  transition: color 0.14s;
+  font-weight: 500;
+}
+.footer-links ul li a:hover { color: var(--accent); }
+.footer-contact p, .footer-contact a {
+  color: #c5d5da;
+  margin-bottom: 0.7rem;
+  display: block;
+  font-weight: 500;
+  text-decoration: none;
+}
+.footer-contact a:hover { color: var(--accent); }
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  color: #8091a8;
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .hero { flex-direction: column; margin: 1.3rem auto 2rem; }
+  .hero-content { padding: 1.1rem 1.2rem; text-align: center;}
+  .ajmer-gallery img { width: 41vw; height: 26vw; min-width: 110px; min-height: 72px;}
+  .header-container { flex-direction: column; align-items: flex-start; }
+  nav ul { gap: 0.8rem; }
+}
+@media (max-width: 650px) {
+  .more-info, .hero-content { padding: 0.85rem 0.6rem !important; }
+  .hero-img { min-width: 120px; }
+  .footer-container { flex-direction: column; gap: 1.5rem;}
+  .logo { font-size: 1.09rem;}
+}
+
+
+</style>
 </head>
 <body>
  <header>
@@ -223,13 +282,19 @@
         <ul>
           <li><a href="index.html">Home</a></li>
       
+         <li><a href="ajmer.html" class="active">Ajmer</a></li>
+          <li><a href="sikar.html" >Sikar</a></li>
+          <li><a href="kishangarh.html">Kishangarh</a></li>
           <li><a href="laxmangarh.html">Laxmangarh</a></li>
           <li><a href="kota.html">Kota</a></li>
           <li><a href="delhi.html">Delhi</a></li>
           <li><a href="fatehpur.html">Fatehpur</a></li>
-          <li><a href="sikar.html" class="active">Sikar</a></li>
-          <li><a href="ratangarh.html">Ratangarh</a></li>
-          <li><a href="kishangarh.html">Kishangarh</a></li>
+          <li><a href="jaipur.html">Jaipur</a></li>
+          <li><a href="pune.html">Pune</a></li>
+           <li><a href="kolkata.html">Kolkata</a></li>
+          <li><a href="aligarh.html" class="active">Aligarh</a></li>
+          <li><a href="burdman.html">Burdman</a></li>
+
         </ul>
       </nav>
     </div>
@@ -237,7 +302,7 @@
   <section class="hero" aria-label="Ajmer overview and image">
     <div class="hero-img" role="img" aria-label="Image of Ajmer city with Dargah Sharif">
       <img
-        src="https://images.herzindagi.info/image/2018/Dec/visit-ajmer-this-weekend.jpg"
+        src="images/ajmer2.jpg"
         alt="Ajmer Dargah Sharif"
         id="ajmerImg"
         loading="lazy"
@@ -246,36 +311,57 @@
     <div class="hero-content">
       <h1>Welcome to Ajmer</h1>
       <p>
-        Explore the sacred city of Ajmer, renowned for the historic Ajmer Sharif Dargah, beautiful lakes, and vibrant culture. A melting pot of spirituality, history, and commerce, Ajmer offers something special for every traveler.
+       Nestled in the heart of Rajasthan, Ajmer is a city steeped in spiritual heritage and glorious Mughal-Rajput history. 
+      From the serene Ana Sagar Lake to the legendary Dargah Sharif and the scenic Aravalli hills, explore Ajmer's rich tapestry of culture, architecture, and cuisine.
       </p>
-      <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
+      <form action="city.php">
+           <button class="btn-primary" id="toggleMoreBtn" aria-expanded="false" aria-controls="moreInfoSection">
         Show More
       </button>
+      </form>
     </div>
   </section>
 
   <section class="more-info" id="moreInfoSection" aria-hidden="true">
     <p>
-      Ajmer is one of the oldest cities of Rajasthan, famous for the shrine of Sufi saint Khwaja Moinuddin Chishti. The city has many attractions like Anasagar Lake, Adhai-din-ka-Jhonpra mosque, and the annual Urs festival that attracts devotees from across the world.
+      Ajmer’s golden domes, marble pavilions, and bustling bazaars invite you to a cultural experience like no other. 
+    Visit <strong>Dargah Sharif</strong>, the Sufi shrine of Khwaja Moinuddin Chishti, and wander through the mystical lanes of old Ajmer. 
+    Stroll along <strong>Ana Sagar Lake</strong> at sunset, take in the architectural wonder of <strong>Adhai-din-ka-Jhonpra</strong>, 
+    and trek up to <strong>Taragarh Fort</strong> for panoramic views of the city. Don’t miss the colorful festivals, delectable Rajasthani thali, and the unique blend of Mughal-Rajput charm!
     </p>
     <p>
       Ajmer also serves as a gateway to Pushkar, known for its sacred lake and Brahma temple. The city blends the historical with the modern, making it a vibrant place to visit and explore.
     </p>
   </section>
+  <div class ="ajmer-gallery">
+
+    <h2>Ajmer Gallery</h2>
+    <div class="gallery-images">
+     
+      <img src="images/anasagarlake.jpg"  alt="Ana Sagar Lake" />
+      <img src="images/adhaidin.jpg" alt="Adhai Din Ka Jhonpra" />
+      <img src="images/targarah.jpg" alt="Taragarh Fort" />
+    </div>
+  </div>
 
   <footer>
     <div class="footer-container">
       <div class="footer-section footer-links" aria-label="Explore cities links">
         <h3>Explore Cities</h3>
         <ul>
-          <li><a href="ajmer.html" aria-current="page">Ajmer</a></li>
-          <li><a href="sikar.html">Sikar</a></li>
-          <li><a href="kishangarh.html">Kishangarh</a></li>
+           <li><a href="ajmer.html"aria-current="page">Ajmer</a></li>
+           <li><a href="sikar.html">Sikar</a></li>
+           <li><a href="kishangarh.html">Kishangarh</a></li>
           <li><a href="laxmangarh.html">Laxmangarh</a></li>
           <li><a href="kota.html">Kota</a></li>
           <li><a href="delhi.html">Delhi</a></li>
           <li><a href="fatehpur.html">Fatehpur</a></li>
-          <li><a href="ratangarh.html">Ratangarh</a></li>
+         <li><a href="jaipur.html">Jaipur</a></li>
+          <li><a href="pune.html">Pune</a></li>
+           <li><a href="kolkata.html">Kolkata</a></li>
+          <li><a href="aligarh.html" class="active">Aligarh</a></li>
+          <li><a href="burdman.html">Burdman</a></li>
+
         </ul>
       </div>
       <div class="footer-section footer-contact" aria-label="Contact information">
@@ -299,7 +385,7 @@
     const toggleBtn = document.getElementById('toggleMoreBtn');
     const moreInfo = document.getElementById('moreInfoSection');
     const img = document.getElementById('ajmerImg');
-
+    
     toggleBtn.addEventListener('click', () => {
       if (moreInfo.style.display === 'block') {
         moreInfo.style.display = 'none';

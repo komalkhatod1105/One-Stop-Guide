@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Stop Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #0a0c37, #2e236c);
+      color: #333;
+      padding: 20px;
+    }
+    nav {
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(13, 235, 87, 0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+    }
+    nav h2 {
+      color: #0c0d35;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #e37907d2;
+      font-weight: 600;
+    }
+   /* Header Styles */
+   .main-header {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    
+    .main-header h1 {
+      color: #e67e22; /* Orange color */
+      font-size: 2.5rem;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      position: relative;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    
+    .main-header h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 3px;
+      background: #e67e22;
+      border-radius: 3px;
+    }
+
+
+header {
+  background: var(--primary-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand h2 {
+  color: var(--accent);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  background: var(--accent);
+  color: var(--primary-bg);
+}
+
+/* Dropdown Menu */
+.dropdown {
+      position: relative;
+    }
+    
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 100;
+      padding: 10px 0;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .dropdown-menu li {
+      padding: 8px 15px;
+    }
+    
+    .dropdown-menu a {
+      color: #333;
+      display: block;
+      transition: all 0.2s;
+    }
+    
+    .dropdown-menu a:hover {
+      background: #f5f5f5;
+      padding-left: 20px;
+    }
+
+/* Mobile Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--text-main);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--secondary-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    transition: all 0.5s ease;
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+      animation: fadeIn 1.5s ease;
+    }
+    .city-card {
+      background: #c3d1e7;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .city-card:hover {
+      transform: scale(1.05);
+    }
+    .city-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+    .city-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #2d104d;
+    }
+    .city-card p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    .special-content {
+      font-size: 0.8rem;
+      color: #1b143b;
+      margin-bottom: 15px;
+    }
+    .explore-btn {
+      background-color: #4b3c6f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+    .explore-btn i {
+      animation: floatIcon 1.5s infinite alternate;
+    }
+    .explore-btn::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: 0;
+      left: -100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(45deg);
+      transition: left 0.5s;
+    }
+    .explore-btn:hover::after {
+      left: 100%;
+    }
+    .explore-btn:hover {
+      background-color: #78748f;
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #dcd8d8;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 2s ease;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .footer-section h3 {
+      color: #2e125a;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    .footer-section ul li a:hover {
+      color: #07070f;
+    }
+
+    .made-by {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .komal-name {
+      background: linear-gradient(to right, #342856, #110d50);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      font-size: 1.1rem;
+      animation: colorPulse 2s infinite;
+    }
+    .footer-bottom-links {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .footer-bottom-links a {
+      color: #090518;
+      margin: 0 10px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .footer-bottom-links a:hover {
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+
+    @keyframes colorPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes floatIcon {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-3px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <nav class="main-nav">
+    <div class="nav-brand">
+      <h2>One Stop Guide</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="dropdown">
+       <!-- Cities Button -->
+<li class="dropdown">
+  <button class="dropbtn" onclick="toggleDropdown()">Cities ▾</button>
+  <div id="citiesDropdown" class="dropdown-content">
+    <a href="shimla.html">Shimla</a>
+    <a href="ajmer.html">Ajmer</a>
+    <a href="sikar.html">Sikar</a>
+    <a href="kishangarh.html">Kishangarh</a>
+    <a href="laxmangarh.html">Laxmangarh</a>
+    <a href="kota.html">Kota</a>
+    <a href="delhi.html">Delhi</a>
+    <a href="fatehpur.html">Fatehpur</a>
+    <a href="ratangarh.html">Ratangarh</a>
+    <a href="burdwan.html">Burdwan</a>
+    <a href="kolkata.html">Kolkata</a>
+    <a href="aligarh.html">Aligarh</a>
+    <a href="pune.html">Pune</a>
+    <a href="jaipur.html">Jaipur</a>
+  </div>
+</li>
+
+<style>
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+</style>
+
+<script>
+function toggleDropdown() {
+  document.getElementById("citiesDropdown").classList.toggle("show");
+}
+
+// Close dropdown if clicked outside
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    document.querySelectorAll(".dropdown-content").forEach(dd => dd.classList.remove('show'));
+  }
+}
+</script>
+
+      </li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+<div class="main-header">
+    <h1>Explore Your Favourite Cities</h1>
+  </div>
+  
+
+  <div class="city-grid">
+    <!-- Repeatable City Cards -->
+  <!-- Common City Card Template -->
+   <div class="city-card">
+  <img src="images/shimla.webp" alt="Shimla" />
+  <h2>Shimla</h2>
+  <p>Shimla is a beautiful hill station and the capital of Himachal Pradesh. Visit Mall Road, Ridge, and Jakhoo Temple.</p>
+  <div class="special-content">Enjoy the colonial charm and Himalayan views.</div>
+  <button class="explore-btn" onclick="openMap('Shimla')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="https://images.herzindagi.info/image/2018/Dec/visit-ajmer-this-weekend.jpg" alt="Ajmer" />
+  <h2>Ajmer</h2>
+  <p>Ajmer is known for Ajmer Sharif Dargah and Ana Sagar Lake.</p>
+  <div class="special-content">Try boat rides and shop at Dargah Bazaar.</div>
+  <button class="explore-btn" onclick="openMap('Ajmer')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="sikar.jpg" alt="Sikar" />
+  <h2>Sikar</h2>
+  <p>Sikar is famous for its historic forts and education hubs.</p>
+  <div class="special-content">Visit Biyani College and Radhakishan Mandir.</div>
+  <button class="explore-btn" onclick="openMap('Sikar')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+<div class="city-card">
+  <img src="Kolkata.webp" alt="Kolkata" />
+  <h2>Kolkata</h2>
+  <p>Kolkata is known as the cultural capital of India, famous for its colonial architecture and festivals.</p>
+  <div class="special-content">Visit Howrah Bridge and Victoria Memorial.</div>
+  <button class="explore-btn" onclick="openMap('Kolkata')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="Burdwan.jpg" alt="Burdwan" />
+  <h2>Burdwan</h2>
+  <p>Burdwan is known for its rich history, temples, and agricultural significance.</p>
+  <div class="special-content">Visit Curzon Gate and 108 Shiva Temples.</div>
+  <button class="explore-btn" onclick="openMap('Burdwan')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="Aligarh.webp" alt="Aligarh" />
+  <h2>Aligarh</h2>
+  <p>Aligarh is famous for its lock industry and prestigious Aligarh Muslim University.</p>
+  <div class="special-content">Visit Aligarh Fort and Jama Masjid.</div>
+  <button class="explore-btn" onclick="openMap('Aligarh')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="kishangarh.jpg" alt="Kishangarh" />
+  <h2>Kishangarh</h2>
+  <p>Kishangarh is known for Phool Mahal and marble industry.</p>
+  <div class="special-content">Explore Asia’s largest marble market.</div>
+  <button class="explore-btn" onclick="openMap('Kishangarh')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="laxmangarh.jpg" alt="Laxmangarh" />
+  <h2>Laxmangarh</h2>
+  <p>Laxmangarh is a calm town with beautiful temples.</p>
+  <div class="special-content">Discover Ghanta Ghar and local traditions.</div>
+  <button class="explore-btn" onclick="openMap('Laxmangarh')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="images/kota.jpg" alt="Kota" />
+  <h2>Kota</h2>
+  <p>Kota is known for coaching centers and Chambal River.</p>
+  <div class="special-content">Visit 7 Wonders Park and enjoy riverside walks.</div>
+  <button class="explore-btn" onclick="openMap('Kota')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="https://cdn.britannica.com/20/189820-050-D650A54D/Red-Fort-Old-Delhi-India.jpg?w=300" alt="India Gate in Delhi"/>
+  <h2>Delhi</h2>
+  <p>Delhi is India’s capital, rich with historic monuments.</p>
+  <div class="special-content">Visit India Gate, Red Fort & taste local street food.</div>
+  <button class="explore-btn" onclick="openMap('Delhi')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg" alt="Fatehpur" />
+  <h2>Fatehpur</h2>
+  <p>Fatehpur is known for painted havelis and Shekhawati art.</p>
+  <div class="special-content">Visit Nadine Le Prince Haveli and enjoy local art.</div>
+  <button class="explore-btn" onclick="openMap('Fatehpur Rajasthan')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+
+<div class="city-card">
+  <img src="images/jaipur2.jpg" alt="Jaipur" />
+  <h2>Jaipur</h2>
+  <p>Jaipur is a regal city that beautifully blends royal heritage, vibrant culture, and architectural grandeur. </p>
+  <div class="special-content">Walk old streets, explore heritage havelis.</div>
+  <button class="explore-btn" onclick="openMap('Jaipur Rajasthan')">
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+</div>
+<div class="city-card">
+  <img src= "pune.jpg" alt="Pune" />
+  <h2>Pune</h2>
+  <p>Pune is known for its educational institutions and cultural heritage.</p>
+  <div class="special-content">Visit Aga Khan Palace, Shaniwar Wada, and enjoy local cuisine.</div>
+  <button class="explore-btn" onclick="openMap('Pune')">  
+    <i class="fas fa-map-marker-alt"></i> Explore
+  </button>
+  </div>
+
+    <!-- Add other cities (Sikar, Kishangarh, Laxmangarh, Kota) here similarly -->
+    <!-- ... -->
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Get to Know Us</h3>
+        <ul>
+          <li><a href="#">About One Stop Guide</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Help Center</a></li>
+<li><a href="#">City Submission Form</a></li>
+<li><a href="#">Press & Media</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Blog</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-section">
+  <h3>Explore Cities</h3>
+  <ul>
+    <li><a href="shimla.html" target="_blank">Shimla</a></li>
+    <li><a href="ajmer.html" target="_blank">Ajmer</a></li>
+    <li><a href="sikar.html" target="_blank">Sikar</a></li>
+    <li><a href="kishangarh.html" target="_blank">Kishangarh</a></li>
+    <li><a href="laxmangarh.html" target="_blank">Laxmangarh</a></li>
+    <li><a href="kota.html" target="_blank">Kota</a></li>
+    <li><a href="delhi.html" target="_blank">Delhi</a></li>
+    <li><a href="fatehpur.html" target="_blank">Fatehpur</a></li>
+    <li><a href="jaipur.html" target="_blank">Jaipur</a></li>
+    <li><a href="pune.html" target="_blank">Pune</a></li>
+    <li><a href="aligarh.html">Aligarh</a></li>
+    <li><a href="burdman.html">Burdman</a></li>
+     <li><a href="kolkata.html" >Kolkata</a></li>
+  </ul>
+</div>
+
+
+      <div class="footer-section">
+        <h3>Connect with Us</h3>
+        <ul>
+          <li><a href="mailto:komalkhatod1234@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+          <li><a href="https://www.linkedin.com/in/komal-khatod-9b419a265" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/komalkhatod1105" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="tel:+918824778262"><i class="fas fa-phone"></i> Call Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <p class="made-by">
+      Made by <span class="komal-name">Komal Khatod & Khushi Poonia</span> | © 2025 One Stop Guide
+    </p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Back to Top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      // Toggle mobile menu
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+        });
+      });
+      
+      // Make dropdown work on mobile
+      const dropdown = document.querySelector('.dropdown');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+      
+      dropdown.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+      });
+    });
+    function openMap(city) {
+      const mapUrl = `https://www.google.com/maps/search/${city}+Rajasthan`;
+      window.open(mapUrl, "_blank");
+    }
+  </script>
+
+</body>
+</html>
