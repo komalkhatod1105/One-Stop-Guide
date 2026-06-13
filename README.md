@@ -76,7 +76,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 🙋‍♀️ Developed By
 
 **Komal Khatod**  
-B.Tech CSE (3rd Year), Mody University of Science and Technology  
+B.Tech CSE (3rd Year)  Mody University of Science and Technology  
+
 📧 Email: [komalkhatod1234@gmail.com]  
 🔗 GitHub: [komalkhatod1105](https://github.com/komalkhatod1105)
 
