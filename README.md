@@ -41,7 +41,7 @@ One-Stop-Guide/
 <br>
 ├── CityGuideDb.sql # SQL file to create and populate DB
 <br>
-└── assets/ # (If present) For images, CSS, JS
+└── assets # (If present) For images, CSS, JS
 
 ---
 
