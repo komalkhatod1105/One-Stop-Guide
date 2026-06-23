@@ -33,7 +33,7 @@ One Stop Guide is a responsive web platform designed to help users explore major
 
 ```text
 One-Stop-Guide/
-├── indx.html              # Main homepage
+├── index.html              # Main homepage
 ├── ajmer.html             # Ajmer city page
 ├── delhi.html             # Delhi city page
 ├── city.php               # Dynamic city page
