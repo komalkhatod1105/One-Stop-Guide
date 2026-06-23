@@ -1,89 +1,107 @@
-# One Stop Guide
+# 🌍 One Stop Guide
 
-**One Stop Guide** is a responsive and dynamic web platform that helps users explore major Indian cities. It combines static city pages with PHP & MySQL backend to deliver city-specific information dynamically, and includes Google Maps integration for real-world exploration.
-
----
-
-## 🚀 Features
-
--   🏙️ Explore various Indian cities like Ajmer, Delhi, Sikar, and more
--   📍 “Explore” button redirects to the city on Google Maps
--   🧠 City info dynamically loaded using PHP and MySQL
--   💡 User-friendly and mobile responsive design
--   🧾 Database file (`CityGuideDb.sql`) included for easy setup
+One Stop Guide is a responsive web platform designed to help users explore major Indian cities with ease. The project combines static web pages with a PHP and MySQL backend to provide dynamic city-specific information, along with Google Maps integration for real-world navigation and exploration.
 
 ---
 
-## 🧑‍💻 Technologies Used
+## ✨ Features
 
-### Frontend:
--   HTML5
--   CSS3
--   JavaScript
+- 🏙️ Explore information about various Indian cities such as Ajmer, Delhi, Sikar, and more.
+- 📍 Direct access to Google Maps through the **Explore** button.
+- 🧠 Dynamic city content retrieval using PHP and MySQL.
+- 📱 Fully responsive and user-friendly interface.
+- 🗄️ Database setup file (`CityGuideDb.sql`) included for quick installation.
 
-### Backend:
--   PHP
+---
 
-### Database:
--   MySQL
-  
-## 📁 Project Structure
+## 🛠️ Technologies Used
 
+### Frontend
+- HTML5
+- CSS3
+- JavaScript
+
+### Backend
+- PHP
+
+### Database
+- MySQL
+
+---
+
+## 📂 Project Structure
+
+```text
 One-Stop-Guide/
-<br>
-├── indx.html # Main homepage
-<br>
-├── ajmer.html, delhi.html # Static city pages
-<br>
-├── city.php, sikar.php # Dynamic pages using PHP
-<br>
-├── dbconnect.php # DB connection file
-<br>
-├── CityGuideDb.sql # SQL file to create and populate DB
-<br>
-└── assets # (If present) For images, CSS, JS
+├── indx.html              # Main homepage
+├── ajmer.html             # Ajmer city page
+├── delhi.html             # Delhi city page
+├── city.php               # Dynamic city page
+├── sikar.php              # Dynamic Sikar page
+├── dbconnect.php          # Database connection file
+├── CityGuideDb.sql        # Database schema and sample data
+└── assets/                # Images, CSS, and JavaScript files
+```
 
 ---
 
-## ⚙️ How to Run Locally (XAMPP/WAMP)
+## ⚙️ Installation & Local Setup
 
-1.  Clone or download this repo and move the folder into `htdocs` (for XAMPP).
-2.  Start **Apache** and **MySQL** from XAMPP Control Panel.
-3.  Import the database:
-   - Go to `phpMyAdmin`
-   - Create a DB named `CityGuide`
-   - Import `CityGuideDb.sql`
-4.  Open the browser and visit:
-5.  Click on any city card or page. Pages like `sikar.php` fetch data from DB.
+### Prerequisites
+
+- XAMPP or WAMP
+- PHP
+- MySQL
+
+### Steps to Run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/komalkhatod1105/One-Stop-Guide.git
+```
+
+2. Move the project folder into the `htdocs` directory (for XAMPP).
+
+3. Start **Apache** and **MySQL** from the XAMPP Control Panel.
+
+4. Open **phpMyAdmin** and:
+
+   - Create a database named `CityGuide`
+   - Import the `CityGuideDb.sql` file
+
+5. Open your browser and visit:
+
+```text
+http://localhost/One-Stop-Guide/
+```
+
+6. Click on any city card to explore city information. Dynamic pages such as `sikar.php` fetch data directly from the database.
 
 ---
 
-## 💡 Future Scope
+## 🚀 Future Enhancements
 
--   Add login/register functionality
--   User feedback or review system
--   Admin panel to update city content
--   API integration (weather, transport, tourism)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+- 🔐 User authentication (Login/Register)
+- ⭐ User reviews and feedback system
+- 🛡️ Admin panel for managing city information
+- 🌦️ Integration with external APIs (Weather, Transport, Tourism)
+- ❤️ Favorite cities and personalized recommendations
 
 ---
 
-## 🙋‍♀️ Developed By
+## 📜 License
 
-**Komal Khatod**  
-B.Tech CSE (3rd Year)  Mody University of Science and Technology  
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
 
-📧 Email: [komalkhatod1234@gmail.com]  
-🔗 GitHub: [komalkhatod1105](https://github.com/komalkhatod1105)
+---
 
+## 👩‍💻 Developed By
 
+**Komal Khatod**  
+B.Tech CSE (3rd Year)  
+Mody University of Science and Technology
 
+📧 Email: komalkhatod1234@gmail.com
 
-
-
-
+🔗 GitHub: https://github.com/komalkhatod1105
