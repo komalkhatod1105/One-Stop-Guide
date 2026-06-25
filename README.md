@@ -30,11 +30,6 @@
 
 ---
 
-## 📸 Preview
-
-> Add project screenshots here
-
----
 
 ## 🤝 Contributor
 
@@ -51,6 +46,8 @@ Project Owner 🚀
 </td>
 </tr>
 </table>
+
+
 ---
 
 ## 🌟 Open Source Contribution
