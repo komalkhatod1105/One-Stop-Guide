@@ -36,34 +36,21 @@
 
 ---
 
-## 🤝 Contributors
+## 🤝 Contributor
 
 <table>
 <tr>
-
 <td align="center">
 <a href="https://github.com/komalkhatod1105">
-<img src="https://github.com/komalkhatod1105.png" width="120px;" alt="Komal"/>
+<img src="https://github.com/komalkhatod1105.png" width="120px;" alt="Komal Khatod"/>
 <br>
 <b>Komal Khatod</b>
 </a>
 <br>
 Project Owner 🚀
 </td>
-
-<td align="center">
-<a href="https://github.com/aartipansari">
-<img src="https://github.com/aartipansari.png" width="120px;" alt="Aarti"/>
-<br>
-<b>Aarti Pansari</b>
-</a>
-<br>
-Contributor 💻
-</td>
-
 </tr>
 </table>
-
 ---
 
 ## 🌟 Open Source Contribution
