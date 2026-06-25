@@ -1,89 +1,114 @@
-# One Stop Guide
+# 🌍 One Stop Guide
 
-**One Stop Guide** is a responsive and dynamic web platform that helps users explore major Indian cities. It combines static city pages with PHP & MySQL backend to deliver city-specific information dynamically, and includes Google Maps integration for real-world exploration.
-
----
-
-## 🚀 Features
-
--   🏙️ Explore various Indian cities like Ajmer, Delhi, Sikar, and more
--   📍 “Explore” button redirects to the city on Google Maps
--   🧠 City info dynamically loaded using PHP and MySQL
--   💡 User-friendly and mobile responsive design
--   🧾 Database file (`CityGuideDb.sql`) included for easy setup
+<p align="center">
+  <h3 align="center">Discover Indian Cities in One Place</h3>
+  <p align="center">
+    Explore cities, landmarks, and travel information with an interactive and user-friendly platform.
+  </p>
+</p>
 
 ---
 
-## 🧑‍💻 Technologies Used
+## ✨ Features
 
-### Frontend:
--   HTML5
--   CSS3
--   JavaScript
+- 🏙️ Explore Indian Cities
+- 📍 Google Maps Integration
+- 🧠 Dynamic PHP & MySQL Backend
+- 📱 Responsive UI
+- ⚡ Fast and Lightweight
+- 🔍 Easy Navigation
 
-### Backend:
--   PHP
+---
 
-### Database:
--   MySQL
-  
-## 📁 Project Structure
+## 🛠️ Tech Stack
 
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,php,mysql,git,github,vscode" />
+
+</p>
+
+---
+
+## 📸 Preview
+
+> Add project screenshots here
+
+---
+
+## 🤝 Contributors
+
+<table>
+<tr>
+
+<td align="center">
+<a href="https://github.com/komalkhatod1105">
+<img src="https://github.com/komalkhatod1105.png" width="120px;" alt="Komal"/>
+<br>
+<b>Komal Khatod</b>
+</a>
+<br>
+Project Owner 🚀
+</td>
+
+<td align="center">
+<a href="https://github.com/aartipansari">
+<img src="https://github.com/aartipansari.png" width="120px;" alt="Aarti"/>
+<br>
+<b>Aarti Pansari</b>
+</a>
+<br>
+Contributor 💻
+</td>
+
+</tr>
+</table>
+
+---
+
+## 🌟 Open Source Contribution
+
+Contributions are always welcome!
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push your branch
+5. Open a Pull Request
+
+---
+
+## 📂 Project Structure
+
+```text
 One-Stop-Guide/
-<br>
-├── indx.html # Main homepage
-<br>
-├── ajmer.html, delhi.html # Static city pages
-<br>
-├── city.php, sikar.php # Dynamic pages using PHP
-<br>
-├── dbconnect.php # DB connection file
-<br>
-├── CityGuideDb.sql # SQL file to create and populate DB
-<br>
-└── assets # (If present) For images, CSS, JS
+│
+├── index.html
+├── city.php
+├── dbconnect.php
+├── CityGuideDb.sql
+├── assets/
+└── README.md
+```
 
 ---
 
-## ⚙️ How to Run Locally (XAMPP/WAMP)
+## 📜 License
 
-1.  Clone or download this repo and move the folder into `htdocs` (for XAMPP).
-2.  Start **Apache** and **MySQL** from XAMPP Control Panel.
-3.  Import the database:
-   - Go to `phpMyAdmin`
-   - Create a DB named `CityGuide`
-   - Import `CityGuideDb.sql`
-4.  Open the browser and visit:
-5.  Click on any city card or page. Pages like `sikar.php` fetch data from DB.
+Licensed under the MIT License.
 
 ---
 
-## 💡 Future Scope
+## 👩‍💻 Maintainer
 
--   Add login/register functionality
--   User feedback or review system
--   Admin panel to update city content
--   API integration (weather, transport, tourism)
+**Komal Khatod**
 
----
+GitHub: https://github.com/komalkhatod1105
 
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙋‍♀️ Developed By
-
-**Komal Khatod**  
-B.Tech CSE (3rd Year)  Mody University of Science and Technology  
-
-📧 Email: [komalkhatod1234@gmail.com]  
-🔗 GitHub: [komalkhatod1105](https://github.com/komalkhatod1105)
+![GitHub stars](https://img.shields.io/github/stars/komalkhatod1105/One-Stop-Guide?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/komalkhatod1105/One-Stop-Guide?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/komalkhatod1105/One-Stop-Guide?style=for-the-badge)
+![Open Source](https://img.shields.io/badge/Open%20Source-Yes-success?style=for-the-badge)
 
 
-
-
-
-
-
+⭐ Star this repository if you found it useful!
