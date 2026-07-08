@@ -46,6 +46,58 @@ header {
   align-items: center;
   padding: 0 1.2rem;
 }
+/* Header */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0077ff;
+}
+
+/* Navigation */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+.nav-links li a:hover {
+    background: #0077ff;
+    color: white;
+}
 .logo {
   font-family: 'Poppins',sans-serif;
   font-weight: 800;
@@ -312,28 +364,20 @@ footer {
   </style>
 </head>
 <body>
- <header>
+<header>
     <div class="header-container">
-      <div class="logo">One Stop Guide</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ajmer.html">Ajmer</a></li>
-          <li><a href="sikar.html">Sikar</a></li>
-          <li><a href="kishangarh.html">Kishangarh</a></li>
-          <li><a href="laxmangarh.html">Laxmangarh</a></li>
-          <li><a href="kota.html">Kota</a></li>
-          <li><a href="delhi.html">Delhi</a></li>
-          <li><a href="fatehpur.html">Fatehpur</a></li>
-          <li><a href="jaipur.html">Jaipur</a></li>
-          <li><a href="pune.html">Pune</a></li>
-          <li><a href="kolkata.html">Kolkata</a></li>
-          <li><a href="aligarh.html">Aligarh</a></li>
-          <li><a href="burdman.html" class="active">Bardhaman</a></li>
-        </ul>
-      </nav>
+        <div class="logo">One Stop Guide</div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
   <section class="hero" aria-label="Bardhaman overview and image">
     <div class="hero-img" role="img" aria-label="Image of Bardhaman city">
       <img
