@@ -114,7 +114,8 @@ php -S localhost:8000
 
 - `http://localhost:8000/index.html`
 - `http://localhost:8000/city.php`
-![alt text]({70D1102E-8587-47C1-81DF-323DAB86F522}.png)
+<img width="1900" height="774" alt="{70D1102E-8587-47C1-81DF-323DAB86F522}" src="https://github.com/user-attachments/assets/c68fd826-5c91-4485-a874-850b48c58d6e" />
+
 
 ---
 
