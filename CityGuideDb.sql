@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS city_data;
 
 CREATE TABLE city_data (
   id INT AUTO_INCREMENT PRIMARY KEY,
+  state_name VARCHAR(50) DEFAULT NULL,
   city_name VARCHAR(50),
   place_name VARCHAR(100),
   place_type VARCHAR(50),
@@ -18,7 +19,7 @@ INSERT INTO city_data (city_name, place_name, place_type, description) VALUES
 ('Ajmer', 'Ajmer Sharif Dargah', 'Place', 'A famous Sufi shrine.'),
 ('Ajmer', 'Ana Sagar Lake', 'Place', 'Scenic artificial lake.'),
 ('Ajmer', 'JLN Hospital', 'Hospital', 'Major hospital in Ajmer.'),
-('Ajmer', 'Mayo College', 'College', 'One of India\'s ' oldest public schools.'),
+('Ajmer', 'Mayo College', 'College', 'One of India\'s oldest public schools.'),
 ('Ajmer', 'Coffee Day', 'Cafe', 'Popular café for youth.');
 
 -- Kota

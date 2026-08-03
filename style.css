@@ -1,0 +1,450 @@
+:root {
+  --primary-bg: #eaf4ff;
+  --secondary-bg: #f7fbff;
+  --card-bg: #ffffff;
+  --accent: #3b82f6;
+  --accent-soft: #60a5fa;
+  --text-main: #10233f;
+  --text-muted: #47607a;
+  --border: #dce9f8;
+  --shadow: 0 12px 30px rgba(15, 37, 68, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Poppins', 'Segoe UI', sans-serif !important;
+  background: linear-gradient(135deg, var(--primary-bg), #2e236c) !important;
+  color: var(--text-main) !important;
+  line-height: 1.6 !important;
+}
+
+header {
+  background: linear-gradient(90deg, #dceeff 0%, #f7fbff 100%) !important;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.16) !important;
+  padding: 0.4rem 0 !important;
+}
+
+.main-nav,
+nav {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 1rem 1.2rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+  border-radius: 14px !important;
+}
+
+.header-container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 1rem 1.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+}
+
+.nav-brand h2,
+.logo {
+  color: var(--accent) !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  letter-spacing: 1px !important;
+  padding: 0.15rem 0 !important;
+}
+
+.nav-links,
+nav ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.7rem !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-links a,
+nav ul li a,
+.dropbtn {
+  text-decoration: none !important;
+  color: var(--text-main) !important;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 999px !important;
+  transition: all 0.2s ease !important;
+  background: rgba(59, 130, 246, 0.08) !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font: inherit !important;
+}
+
+.nav-links a:hover,
+nav ul li a:hover,
+.nav-links a.active,
+nav ul li a.active,
+.dropbtn:hover {
+  background: var(--accent) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.2) !important;
+}
+
+.dropdown {
+  position: relative !important;
+}
+
+.dropdown-content {
+  display: none !important;
+  position: absolute !important;
+  top: 110% !important;
+  left: 0 !important;
+  background: white !important;
+  min-width: 180px !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+  z-index: 10 !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  padding: 0.3rem 0 !important;
+}
+
+.dropdown-content a {
+  display: block !important;
+  color: #1f1f1f !important;
+  padding: 0.7rem 0.9rem !important;
+  border-radius: 0 !important;
+}
+
+.dropdown-content a:hover {
+  background: #f3f3f3 !important;
+  color: #111 !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.main-header,
+.hero-section {
+  text-align: center !important;
+  padding: 2rem 1rem 1rem !important;
+}
+
+.main-header h1,
+.hero-section h1 {
+  color: var(--accent) !important;
+  font-size: 2.2rem !important;
+  margin: 0 !important;
+}
+
+.city-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 20px !important;
+  max-width: 1200px !important;
+  margin: 1.5rem auto 2rem !important;
+  padding: 0 1rem 1rem !important;
+}
+
+.city-card {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 18px !important;
+  padding: 1rem !important;
+  box-shadow: var(--shadow) !important;
+  color: var(--text-main) !important;
+}
+
+.city-card img {
+  width: 100% !important;
+  height: 160px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.city-card h2,
+.city-card h3 {
+  color: var(--accent-soft) !important;
+  margin: 0.2rem 0 0.5rem !important;
+}
+
+.city-card p,
+.city-card div {
+  color: var(--text-muted) !important;
+}
+
+.card-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.6rem !important;
+  margin-top: 0.9rem !important;
+}
+
+.explore-btn,
+.city-link-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 0.7rem 1rem !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: transform 0.2s ease, background 0.2s ease !important;
+}
+
+.explore-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft)) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.22) !important;
+}
+
+.city-link-btn {
+  background: #eef6ff !important;
+  color: var(--text-main) !important;
+  border: 1px solid #cfe0fb !important;
+}
+
+.explore-btn:hover,
+.city-link-btn:hover {
+  transform: translateY(-2px) !important;
+}
+
+footer {
+  margin-top: 2rem !important;
+  padding: 40px 20px !important;
+  background: linear-gradient(90deg, #dceeff 0%, #f7fbff 100%) !important;
+  border-top: 1px solid rgba(59, 130, 246, 0.16) !important;
+  color: var(--text-muted) !important;
+  box-shadow: 0 -4px 12px rgba(59, 130, 246, 0.08) !important;
+}
+
+.footer-container {
+  max-width: 1200px !important;
+  margin: 0 auto 30px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-around !important;
+  gap: 30px !important;
+}
+
+.footer-section {
+  flex: 1 1 220px !important;
+}
+
+.footer-section h3 {
+  color: var(--accent) !important;
+  margin-bottom: 10px !important;
+  font-size: 1.1rem !important;
+}
+
+.footer-section ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px !important;
+}
+
+.footer-section ul li a {
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+}
+
+.footer-section ul li a:hover {
+  color: var(--accent) !important;
+}
+
+.made-by,
+.footer-bottom-links {
+  text-align: center !important;
+  max-width: 1200px !important;
+  margin: 10px auto 0 !important;
+  font-size: 0.95rem !important;
+}
+
+.komal-name {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
+
+.footer-bottom-links a {
+  color: var(--text-main) !important;
+  margin: 0 10px !important;
+  text-decoration: none !important;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--accent) !important;
+}
+
+.page-shell {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 2rem 1.2rem 3rem !important;
+}
+
+.city-hero,
+.famous-section,
+.city-filter {
+  max-width: 1200px !important;
+  margin: 0 auto 1.8rem !important;
+  padding: 1.2rem !important;
+  background: rgba(255,255,255,0.92) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 28px rgba(15, 37, 68, 0.08) !important;
+}
+
+.city-hero {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr !important;
+  gap: 1.5rem !important;
+  align-items: center !important;
+}
+
+.city-pill {
+  display: inline-flex !important;
+  padding: 0.45rem 0.9rem !important;
+  border-radius: 999px !important;
+  background: rgba(59, 130, 246, 0.12) !important;
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.9rem !important;
+}
+
+.hero-title {
+  font-size: 2.35rem !important;
+  margin: 0 0 0.85rem !important;
+}
+
+.hero-text {
+  color: var(--text-muted) !important;
+  max-width: 680px !important;
+}
+
+.city-summary {
+  background: var(--secondary-bg) !important;
+  border-radius: 18px !important;
+  padding: 1.4rem !important;
+}
+
+.city-summary h3 {
+  margin-top: 0 !important;
+  color: var(--accent) !important;
+}
+
+.city-summary p {
+  margin: 0.7rem 0 !important;
+  color: var(--text-main) !important;
+}
+
+.famous-header h2 {
+  margin: 0 !important;
+  color: var(--accent) !important;
+}
+
+.famous-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 1rem !important;
+  margin-top: 1rem !important;
+}
+
+.famous-card {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 18px !important;
+  padding: 1.2rem !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.famous-card h3 {
+  margin: 0 0 0.5rem !important;
+}
+
+.famous-card p {
+  margin: 0 0 1.1rem !important;
+  color: var(--text-muted) !important;
+}
+
+.city-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.8rem 1.1rem !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  background: var(--accent) !important;
+  color: #fff !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+}
+
+.city-button:hover {
+  background: var(--accent-soft) !important;
+  transform: translateY(-1px) !important;
+}
+
+.city-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+}
+
+.city-button.active {
+  background: #1d4ed8 !important;
+}
+
+.city-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 1rem !important;
+}
+
+.notice {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 1.2rem !important;
+  background: rgba(255,255,255,0.9) !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(59,130,246,0.14) !important;
+  color: var(--text-main) !important;
+}
+
+@media (max-width: 768px) {
+  .main-nav,
+  nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .nav-links,
+  nav ul {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+
+  .dropdown-content {
+    position: static !important;
+    margin-top: 0.3rem !important;
+  }
+}

@@ -325,21 +325,28 @@ footer {
 }
 
   </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
-    <div class="header-container">
-        <div class="logo">One Stop Guide</div>
-
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+  <div class="header-container">
+    <div class="nav-brand">
+      <h2>One Stop Guide</h2>
     </div>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </header>
   
 
@@ -407,53 +414,66 @@ footer {
   </section>
   <div class ="laxmangarh-gallery">
 
-    <h2>Kishangarh Gallery</h2>
+    <h2>Laxmangarh Gallery</h2>
     <div class="gallery-images">
      
-      <img src="images/laxmangarh1.jpg"  alt="Kishangarh dumping yard" />
+      <img src="images/laxmangarh1.jpg"  alt="Laxmangarh Fort" />
       <img src="images/laxmangarh4.jpg" alt="Phool Mahal Palace" />
       <img src="images/lanmangarh2.jpg" alt="Bani Thani Painting" />
     </div>
   </div>
 
-  <footer>
+    <footer>
     <div class="footer-container">
-      <div class="footer-section footer-links" aria-label="Explore cities links">
+      <div class="footer-section">
+        <h3>Get to Know Us</h3>
+        <ul>
+          <li><a href="#">About One Stop Guide</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">City Submission Form</a></li>
+          <li><a href="#">Press & Media</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
         <h3>Explore Cities</h3>
         <ul>
           <li><a href="ajmer.html">Ajmer</a></li>
-           <li><a href="sikar.html">Sikar</a></li>
-           <li><a href="kishangarh.html">Kishangarh</a></li>
-         
+          <li><a href="sikar.html">Sikar</a></li>
+          <li><a href="kishangarh.html">Kishangarh</a></li>
+          <li><a href="laxmangarh.html">Laxmangarh</a></li>
           <li><a href="kota.html">Kota</a></li>
-          
-         <li><a href="jaipur.html">Jaipur</a></li>
+          <li><a href="delhi.html">Delhi</a></li>
+          <li><a href="fatehpur.html">Fatehpur</a></li>
+          <li><a href="jaipur.html">Jaipur</a></li>
           <li><a href="pune.html">Pune</a></li>
-           <li><a href="kolkata.html">Kolkata</a></li>
-          <li><a href="aligarh.html" ></a>Aligarh</a></li>
-           
+          <li><a href="aligarh.html">Aligarh</a></li>
           <li><a href="burdman.html">Burdman</a></li>
-
-         
-          <li><a href="delhi.html" >Delhi</a></li>
-          <li><Fatehpur href="fatehpur.html" >Fatehpur</a></li>
-          <li><a href="laxmangarh.html" class="active">Laxmangarh</a></li>
+          <li><a href="Kolkata.html">Kolkata</a></li>
         </ul>
       </div>
-      <div class="footer-section footer-contact" aria-label="Contact information">
-        <h3>Contact Us</h3>
-        <p>Email: <a href="mailto:support@onestopguide.com">support@onestopguide.com</a></p>
-        <p>Phone: <a href="tel:+919876543210">+91-9876543210</a></p>
-        <p>
-          Follow us on:
-          <a href="#" aria-label="Facebook">Facebook</a> 
-          <a href="#" aria-label="Twitter">Twitter</a> 
-          <a href="#" aria-label="Instagram">Instagram</a>
-        </p>
+      <div class="footer-section">
+        <h3>Connect with Us</h3>
+        <ul>
+          <li><a href="mailto:komalkhatod1234@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+          <li><a href="https://www.linkedin.com/in/komal-khatod-9b419a265" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/komalkhatod1105" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="tel:+918824778262"><i class="fas fa-phone"></i> Call Us</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 One Stop Guide | Created by Komal & Khushi
+    <p class="made-by">
+      Made by <span class="komal-name">Komal Khatod & Khushi Poonia</span> | © 2025 One Stop Guide
+    </p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a> |
+      <a href="#">Terms</a> |
+      <a href="#">Back to Top ↑</a>
     </div>
   </footer>
 
@@ -487,5 +507,6 @@ footer {
     });
   </script>
 
+  <script src="script.js"></script>
 </body>
 </html>
