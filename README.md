@@ -32,16 +32,6 @@ It includes:
 
 ---
 
-## 📸 Screenshot preview
-
-<p align="center">
-  <img src="https://via.placeholder.com/1000x520.png?text=One+Stop+Guide+Preview" alt="One Stop Guide screenshot" width="900" style="border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);" />
-</p>
-
-> Replace the placeholder image with your actual screenshot file to show the real UI.
-
----
-
 ## 🏗️ Architecture overview
 
 This project is organized into three main layers:
